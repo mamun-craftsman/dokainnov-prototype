@@ -1,0 +1,191 @@
+name,category,cost_price,selling_price,current_stock,reorder_point,unit
+Miniket Rice (BRRI-28) Loose,Rice,72.00,78.00,450,90,kg
+Nazirshail Rice Loose,Rice,83.00,92.00,280,55,kg
+BR-28 Rice Loose,Rice,60.00,65.00,520,105,kg
+Paijam Rice Loose,Rice,58.00,63.00,320,65,kg
+Chinigura Rice Loose,Rice,148.00,165.00,95,20,kg
+Bashmati Rice Loose,Rice,180.00,195.00,70,15,kg
+Atap Rice (Brown) Loose,Rice,80.00,88.00,165,35,kg
+Katari Bhog Rice Loose,Rice,155.00,170.00,85,18,kg
+Miniket Rice 5kg Pack,Rice,375.00,390.00,65,13,pcs
+Nazirshail Rice 5kg Pack,Rice,445.00,460.00,42,9,pcs
+Chinigura Rice 1kg Pack,Rice,152.00,165.00,88,18,pcs
+Bashmati Rice 2kg Pack,Rice,375.00,395.00,48,10,pcs
+ACI Pure Atta 2kg Pack,Flour,128.00,140.00,210,48,pcs
+ACI Pure Atta 5kg Pack,Flour,318.00,350.00,105,22,pcs
+Teer Atta 1kg Pack,Flour,65.00,72.00,295,62,pcs
+Teer Atta 2kg Pack,Flour,130.00,144.00,158,35,pcs
+Fresh Atta 1kg Pack,Flour,63.00,70.00,265,58,pcs
+Fresh Atta 5kg Pack,Flour,308.00,340.00,88,19,pcs
+Maida (Refined Flour) Loose,Flour,60.00,68.00,195,42,kg
+Brown Atta (Whole Wheat) Loose,Flour,82.00,90.00,128,30,kg
+Suji (Semolina) 500g Pack,Flour,48.00,55.00,95,22,pcs
+Suji Loose,Flour,92.00,105.00,75,18,kg
+Besan (Gram Flour) Loose,Flour,108.00,120.00,65,15,kg
+Cornflour 200g Pack,Flour,42.00,48.00,82,18,pcs
+Sattu Powder 500g Pack,Flour,68.00,75.00,55,12,pcs
+Teer Soyabean Oil 1L Bottle,Oil,175.00,189.00,195,42,pcs
+Teer Soyabean Oil 2L Bottle,Oil,350.00,378.00,128,28,pcs
+Teer Soyabean Oil 5L Bottle,Oil,875.00,945.00,68,14,pcs
+Rupchanda Soyabean Oil 1L Bottle,Oil,175.00,189.00,162,38,pcs
+Rupchanda Soyabean Oil 2L Bottle,Oil,350.00,378.00,108,24,pcs
+Rupchanda Soyabean Oil 5L Bottle,Oil,875.00,945.00,55,11,pcs
+Fresh Soyabean Oil 1L Bottle,Oil,172.00,185.00,142,32,pcs
+Fresh Soyabean Oil 5L Bottle,Oil,862.00,925.00,62,13,pcs
+Radhuni Mustard Oil 1L Bottle,Oil,182.00,195.00,98,22,pcs
+Radhuni Mustard Oil 500ml Bottle,Oil,91.00,98.00,118,26,pcs
+Radhuni Mustard Oil 5L Bottle,Oil,905.00,975.00,42,9,pcs
+Meizan Soyabean Oil 1L Bottle,Oil,173.00,188.00,102,24,pcs
+Pusti Soyabean Oil 1L Bottle,Oil,172.00,187.00,112,26,pcs
+Teer Mustard Oil Loose,Oil,188.00,200.00,108,24,liter
+Fresh Soyabean Oil Loose,Oil,178.00,190.00,88,19,liter
+Pran Sugar 1kg Pack,Sugar,82.00,88.00,265,58,pcs
+Fresh Sugar 1kg Pack,Sugar,81.00,87.00,295,62,pcs
+Meghna Sugar 1kg Pack,Sugar,83.00,89.00,235,52,pcs
+Teer Sugar 1kg Pack,Sugar,82.00,88.00,252,55,pcs
+Brown Sugar 500g Pack,Sugar,68.00,75.00,65,16,pcs
+Sugar Loose,Sugar,80.00,86.00,180,40,kg
+Icing Sugar 200g Pack,Sugar,52.00,58.00,45,10,pcs
+Molasses (Gur) 500g,Sugar,48.00,55.00,72,16,pcs
+Date Sugar 250g Pack,Sugar,125.00,138.00,35,8,pcs
+Farm Fresh Eggs White (Dozen),Eggs,132.00,141.00,88,19,dozen
+Farm Fresh Eggs Brown (Dozen),Eggs,145.00,155.00,55,13,dozen
+Kazi Farms Eggs (Dozen),Eggs,138.00,148.00,75,17,dozen
+CP Eggs (Dozen),Eggs,135.00,145.00,68,15,dozen
+Country Eggs (Dozen),Eggs,158.00,170.00,42,10,dozen
+Duck Eggs (Dozen),Eggs,165.00,180.00,35,8,dozen
+Broiler Chicken Frozen,Meat,295.00,310.00,48,11,kg
+Desi Chicken (Country),Meat,485.00,520.00,28,6,kg
+Local Beef,Meat,720.00,750.00,38,9,kg
+Mutton (Goat),Meat,1050.00,1100.00,22,5,kg
+Hilsa Fish Frozen,Fish,1200.00,1250.00,22,5,kg
+Rui Fish Frozen,Fish,370.00,385.00,42,10,kg
+Katla Fish Frozen,Fish,345.00,360.00,38,9,kg
+Pangash Fish Frozen,Fish,225.00,240.00,55,12,kg
+Shrimp (Chingri) Frozen,Fish,625.00,660.00,32,7,kg
+Ilish (Hilsa) Dried,Fish,1850.00,1950.00,15,4,kg
+Shutki (Dried Fish),Fish,285.00,310.00,28,6,kg
+Potato Loose,Vegetables,38.00,41.00,425,88,kg
+Red Onion Loose,Vegetables,62.00,66.00,368,75,kg
+Garlic Loose,Vegetables,172.00,180.00,88,19,kg
+Ginger Loose,Vegetables,210.00,220.00,65,15,kg
+Green Chili Loose,Vegetables,115.00,120.00,55,13,kg
+Tomato Loose,Vegetables,80.00,85.00,108,26,kg
+Eggplant (Begun) Loose,Vegetables,52.00,55.00,85,19,kg
+Bitter Gourd (Korola) Loose,Vegetables,64.00,68.00,62,15,kg
+Bottle Gourd (Lau) Loose,Vegetables,44.00,48.00,75,17,kg
+Cabbage Loose,Vegetables,36.00,40.00,95,22,kg
+Cauliflower Loose,Vegetables,48.00,52.00,68,16,kg
+Carrot Loose,Vegetables,58.00,62.00,72,17,kg
+Radish (Mula) Loose,Vegetables,32.00,35.00,85,19,kg
+Pumpkin (Misti Kumra) Loose,Vegetables,38.00,42.00,92,21,kg
+Ladies Finger (Dherosh) Loose,Vegetables,68.00,72.00,48,11,kg
+Spinach (Pui Shak) Loose,Vegetables,35.00,38.00,55,13,kg
+Coriander Leaves Loose,Vegetables,42.00,45.00,35,8,kg
+Cucumber Loose,Vegetables,45.00,48.00,62,14,kg
+Green Beans Loose,Vegetables,72.00,78.00,48,11,kg
+Pran Masala Powder 100g Pack,Spices,78.00,85.00,128,30,pcs
+Pran Masala Powder 200g Pack,Spices,155.00,168.00,75,17,pcs
+Radhuni Turmeric Powder 100g Pack,Spices,68.00,75.00,148,34,pcs
+Radhuni Turmeric Powder 200g Pack,Spices,135.00,148.00,85,19,pcs
+Radhuni Chili Powder 100g Pack,Spices,73.00,80.00,118,27,pcs
+Radhuni Chili Powder 200g Pack,Spices,145.00,158.00,68,16,pcs
+Radhuni Cumin Powder 100g Pack,Spices,88.00,95.00,95,22,pcs
+Radhuni Coriander Powder 100g Pack,Spices,60.00,65.00,105,24,pcs
+Radhuni Garam Masala 50g Pack,Spices,82.00,90.00,75,17,pcs
+Radhuni Meat Curry Masala 100g Pack,Spices,82.00,88.00,88,20,pcs
+Radhuni Biryani Masala 100g Pack,Spices,85.00,92.00,78,18,pcs
+Radhuni Fish Curry Masala 100g Pack,Spices,80.00,88.00,68,16,pcs
+BD Salt 1kg Pack,Spices,32.00,35.00,315,68,pcs
+ACI Salt 1kg Pack,Spices,33.00,36.00,295,62,pcs
+Radhuni Salt 1kg Pack,Spices,32.00,35.00,268,58,pcs
+Black Pepper Powder 50g Pack,Spices,112.00,120.00,55,13,pcs
+Black Pepper Whole 50g Pack,Spices,118.00,128.00,48,11,pcs
+Cardamom (Elachi) 20g Pack,Spices,195.00,215.00,42,9,pcs
+Cinnamon (Daruchini) 50g Pack,Spices,88.00,98.00,58,13,pcs
+Clove (Lobongo) 25g Pack,Spices,105.00,118.00,52,12,pcs
+Bay Leaf (Tej Pata) 20g Pack,Spices,48.00,55.00,65,15,pcs
+Cumin Seeds (Jeera) 100g Pack,Spices,92.00,102.00,72,16,pcs
+Coriander Seeds 100g Pack,Spices,58.00,65.00,78,18,pcs
+Fennel Seeds (Mouri) 100g Pack,Spices,82.00,90.00,62,14,pcs
+Fenugreek (Methi) 50g Pack,Spices,42.00,48.00,58,13,pcs
+Mustard Seeds 100g Pack,Spices,68.00,75.00,72,16,pcs
+Pran Chanachur 200g Pack,Snacks,40.00,45.00,215,48,pcs
+Pran Chanachur 400g Pack,Snacks,80.00,88.00,128,29,pcs
+ACI Bombay Sweets 200g Pack,Snacks,43.00,48.00,158,36,pcs
+ACI Bombay Sweets 400g Pack,Snacks,85.00,95.00,92,21,pcs
+Fresh Toast Biscuit 300g Pack,Snacks,58.00,65.00,188,42,pcs
+Olympic Biscuit 300g Pack,Snacks,55.00,62.00,168,38,pcs
+Tiger Biscuit 300g Pack,Snacks,52.00,58.00,145,33,pcs
+Lexus Biscuit 200g Pack,Snacks,38.00,42.00,175,39,pcs
+Danish Butter Cookies 250g,Snacks,185.00,205.00,45,10,pcs
+Potato Chips 100g Pack,Snacks,38.00,42.00,195,44,pcs
+Kurkure 85g Pack,Snacks,28.00,32.00,218,49,pcs
+Lays Chips 50g Pack,Snacks,22.00,25.00,245,54,pcs
+Pran Mango Juice 250ml Bottle,Beverages,31.00,35.00,252,56,pcs
+Pran Mango Juice 1L Bottle,Beverages,110.00,120.00,108,25,pcs
+Pran Orange Juice 250ml Bottle,Beverages,31.00,35.00,228,51,pcs
+Coca Cola 250ml Bottle,Beverages,22.00,25.00,315,70,pcs
+Coca Cola 1L Bottle,Beverages,78.00,85.00,158,36,pcs
+Coca Cola 2L Bottle,Beverages,142.00,155.00,88,19,pcs
+Sprite 250ml Bottle,Beverages,22.00,25.00,295,65,pcs
+Sprite 1L Bottle,Beverages,78.00,85.00,145,33,pcs
+Fanta 250ml Bottle,Beverages,22.00,25.00,268,59,pcs
+RC Cola 250ml Bottle,Beverages,20.00,23.00,262,58,pcs
+Mojo 250ml Bottle,Beverages,22.00,25.00,238,53,pcs
+7UP 250ml Bottle,Beverages,22.00,25.00,245,54,pcs
+Red Bull Energy Drink 250ml,Beverages,175.00,195.00,48,11,pcs
+Tiger Energy Drink 250ml,Beverages,68.00,75.00,85,19,pcs
+Fresh Drinking Water 1L,Beverages,18.00,20.00,295,65,pcs
+ACI Pure Milk 1L Bottle,Dairy,102.00,110.00,95,22,pcs
+Milk Vita 500ml Pack,Dairy,52.00,56.00,138,32,pcs
+Milk Vita 1L Pack,Dairy,104.00,112.00,88,20,pcs
+Pran Milk 1L Pack,Dairy,98.00,108.00,78,18,pcs
+Fresh Milk 500ml Bottle,Dairy,48.00,52.00,118,27,pcs
+Pran Ghee 200g Jar,Dairy,325.00,340.00,52,12,pcs
+Pran Ghee 500g Jar,Dairy,812.00,850.00,32,8,pcs
+Radhuni Ghee 200g Jar,Dairy,320.00,335.00,48,11,pcs
+Arla Butter 200g Pack,Dairy,272.00,285.00,42,10,pcs
+Anchor Butter 227g Pack,Dairy,295.00,315.00,35,8,pcs
+Pran Yogurt 80g Cup,Dairy,16.00,18.00,158,36,pcs
+Pran Yogurt 500g Tub,Dairy,88.00,95.00,68,16,pcs
+ACI Pure Paneer 200g Pack,Dairy,158.00,165.00,38,9,pcs
+Fresh Cheese 250g Pack,Dairy,185.00,200.00,32,7,pcs
+Pran Milk Powder 500g Pack,Dairy,445.00,475.00,48,11,pcs
+Dano Milk Powder 350g Pack,Dairy,325.00,348.00,55,13,pcs
+Fresh Bread 400g Loaf,Bakery,43.00,48.00,128,29,pcs
+Fresh Brown Bread 400g Loaf,Bakery,49.00,55.00,85,20,pcs
+Sandwich Bread 350g Loaf,Bakery,47.00,52.00,105,24,pcs
+Burger Buns 6pcs Pack,Bakery,55.00,62.00,72,16,pcs
+Pizza Base 3pcs Pack,Bakery,95.00,108.00,42,10,pcs
+Cake Rusk 300g Pack,Bakery,68.00,75.00,88,20,pcs
+ACI Vermicelli 200g Pack,Noodles,50.00,55.00,188,43,pcs
+ACI Vermicelli 500g Pack,Noodles,125.00,135.00,95,22,pcs
+Fresh Vermicelli 200g Pack,Noodles,48.00,52.00,115,26,pcs
+Pran Noodles 350g Pack,Noodles,38.00,42.00,232,52,pcs
+Maggi Noodles 4-Pack,Noodles,88.00,95.00,148,34,pcs
+Cocola Noodles 8-Pack,Noodles,75.00,82.00,125,28,pcs
+Indomie Noodles 5-Pack,Noodles,92.00,102.00,98,22,pcs
+Pran Tamarind Chutney 200g Bottle,Condiments,178.00,190.00,62,15,pcs
+Pran Tomato Ketchup 340g Bottle,Condiments,115.00,125.00,98,23,pcs
+Radhuni BBQ Sauce 340g Bottle,Condiments,125.00,135.00,72,17,pcs
+ACI Soy Sauce 250ml Bottle,Condiments,78.00,85.00,85,20,pcs
+Radhuni Chili Sauce 340g Bottle,Condiments,108.00,115.00,78,18,pcs
+Pran Mixed Pickles 400g Jar,Condiments,155.00,165.00,58,14,pcs
+Pran Mango Pickles 400g Jar,Condiments,148.00,158.00,52,12,pcs
+Pran Fried Onion 200g Pack,Condiments,135.00,145.00,68,16,pcs
+Radhuni Chaat Masala 50g Pack,Condiments,58.00,65.00,72,16,pcs
+Maggi Masala-ae-Magic 6g Sachet,Condiments,5.00,6.00,285,62,pcs
+Teer Dal (Lentils) Loose,Pulses,128.00,135.00,212,46,kg
+Pran Moong Dal Loose,Pulses,140.00,148.00,158,36,kg
+Pran Masoor Dal Loose,Pulses,150.00,158.00,138,31,kg
+Mug Dal (Green Gram) Loose,Pulses,145.00,155.00,125,28,kg
+Chola Dal (Chickpeas) Loose,Pulses,118.00,128.00,148,33,kg
+Motor Dal (Peas) Loose,Pulses,108.00,118.00,132,30,kg
+ACI Pure Dal Loose,Pulses,145.00,155.00,128,29,kg
+ACI Pure Honey 250g Bottle,Condiments,272.00,285.00,42,10,pcs
+Sundarbans Honey 500g Bottle,Condiments,545.00,580.00,28,6,pcs
+Green Tea 25 Bags Pack,Beverages,115.00,125.00,68,16,pcs
+Tapal Tea 190g Pack,Beverages,108.00,118.00,85,19,pcs
+Ispahani Tea 200g Pack,Beverages,112.00,122.00,78,18,pcs
+Fresh Ghee 1kg Jar,Dairy,1625.00,1700.00,22,5,pcs
