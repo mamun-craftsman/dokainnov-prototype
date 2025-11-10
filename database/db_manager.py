@@ -682,3 +682,127 @@ class DatabaseManager:
         shutil.copy2(self.db_path, backup_path)
         print(f"✅ Database backed up to: {backup_path}")
         return backup_path
+    
+    def get_current_cash_balance(self):
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        
+        cursor.execute("""
+            SELECT COALESCE(SUM(paid_amount), 0) as total_paid
+            FROM sales
+        """)
+        total_sales_cash = cursor.fetchone()[0]
+        
+        cursor.execute("""
+            SELECT COALESCE(SUM(amount), 0) as total_expenses
+            FROM cash_transactions
+            WHERE transaction_type = 'OUT'
+        """)
+        total_expenses = cursor.fetchone()[0]
+        
+        cursor.execute("""
+            SELECT COALESCE(SUM(amount), 0) as manual_in
+            FROM cash_transactions
+            WHERE transaction_type = 'IN'
+        """)
+        manual_cash_in = cursor.fetchone()[0]
+        
+        conn.close()
+        
+        cash_balance = total_sales_cash + manual_cash_in - total_expenses
+        
+        return cash_balance
+
+    def add_cash_transaction(self, transaction_type, amount, category, description, transaction_date, reference_id=None, reference_type=None):
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        
+        try:
+            cursor.execute("""
+                INSERT INTO cash_transactions 
+                (transaction_type, amount, category, description, reference_id, reference_type, transaction_date)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+            """, (transaction_type, amount, category, description, reference_id, reference_type, transaction_date))
+            
+            conn.commit()
+            conn.close()
+            return True
+        except Exception as e:
+            conn.rollback()
+            conn.close()
+            raise e
+
+    def get_cash_transactions(self, days=30):
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        cursor.execute(f"""
+            SELECT transaction_id, transaction_type, amount, category, description, 
+                transaction_date, created_at
+            FROM cash_transactions
+            WHERE transaction_date >= date('now', '-{days} days')
+            ORDER BY transaction_date DESC, created_at DESC
+        """)
+        transactions = cursor.fetchall()
+        conn.close()
+        return transactions
+
+    def get_inventory_value(self):
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT COALESCE(SUM(current_stock * cost_price), 0) as inventory_value
+            FROM products
+        """)
+        result = cursor.fetchone()
+        conn.close()
+        return result[0]
+
+    def get_total_dues(self):
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT COALESCE(SUM(due_amount), 0) as total_due
+            FROM sales
+            WHERE payment_status = 'Due'
+        """)
+        result = cursor.fetchone()
+        conn.close()
+        return result[0]
+
+    def get_dues_breakdown(self):
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT customer_name, customer_phone, 
+                SUM(due_amount) as total_due,
+                COUNT(*) as due_count,
+                MIN(julianday('now') - julianday(sale_date)) as oldest_due_days
+            FROM sales
+            WHERE payment_status = 'Due'
+            GROUP BY customer_name
+            ORDER BY total_due DESC
+        """)
+        dues = cursor.fetchall()
+        conn.close()
+        return dues
+
+    def get_cashflow_summary(self, days=30):
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        
+        cursor.execute(f"""
+            SELECT 
+                COALESCE(SUM(CASE WHEN transaction_type = 'IN' THEN amount ELSE 0 END), 0) as total_in,
+                COALESCE(SUM(CASE WHEN transaction_type = 'OUT' THEN amount ELSE 0 END), 0) as total_out
+            FROM cash_transactions
+            WHERE transaction_date >= date('now', '-{days} days')
+        """)
+        
+        result = cursor.fetchone()
+        conn.close()
+        
+        return {
+            'total_in': result[0],
+            'total_out': result[1],
+            'net': result[0] - result[1]
+        }

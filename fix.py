@@ -1,75 +1,87 @@
-import pandas as pd
+"""
+Check what forecasts exist in the database
+"""
 import sqlite3
-import random
-from datetime import datetime, timedelta
+from pathlib import Path
+from datetime import datetime
 
-DB_PATH = 'database/dokainnov.db'
+DB_PATH = Path(__file__).parent / "database" / "dokainnov.db"
 
-# Load all product records
-conn = sqlite3.connect(DB_PATH)
-products_df = pd.read_sql("SELECT name, category, selling_price FROM products", conn)
+print(f"Checking database: {DB_PATH}")
+print(f"Database exists: {DB_PATH.exists()}\n")
+
+if not DB_PATH.exists():
+    print("[ERROR] Database not found!")
+    exit(1)
+
+conn = sqlite3.connect(str(DB_PATH))
+cursor = conn.cursor()
+
+# Check table structure
+print("=" * 70)
+print("TABLE STRUCTURE")
+print("=" * 70)
+cursor.execute("PRAGMA table_info(product_forecasts)")
+columns = cursor.fetchall()
+for col in columns:
+    print(f"  {col[1]:20} {col[2]:10} {'NOT NULL' if col[3] else ''}")
+
+# Count total forecasts
+print("\n" + "=" * 70)
+print("FORECAST STATISTICS")
+print("=" * 70)
+cursor.execute("SELECT COUNT(*) FROM product_forecasts")
+total = cursor.fetchone()[0]
+print(f"Total forecasts: {total}")
+
+if total > 0:
+    # Get date range
+    cursor.execute("SELECT MIN(forecast_date), MAX(forecast_date) FROM product_forecasts")
+    min_date, max_date = cursor.fetchone()
+    print(f"Date range: {min_date} to {max_date}")
+    
+    # Count by product
+    cursor.execute("""
+        SELECT product_id, COUNT(*) as count
+        FROM product_forecasts
+        GROUP BY product_id
+        ORDER BY count DESC
+        LIMIT 10
+    """)
+    print("\nTop 10 products with most forecasts:")
+    for row in cursor.fetchall():
+        print(f"  Product {row[0]}: {row[1]} forecasts")
+    
+    # Show latest 10
+    print("\n" + "=" * 70)
+    print("LATEST 10 FORECASTS")
+    print("=" * 70)
+    cursor.execute("""
+        SELECT 
+            pf.id,
+            pf.product_id,
+            p.product_name,
+            pf.forecast_date,
+            pf.forecast_qty,
+            pf.expected_profit,
+            SUBSTR(pf.ai_advice, 1, 60) as advice_preview
+        FROM product_forecasts pf
+        LEFT JOIN products p ON pf.product_id = p.product_id
+        ORDER BY pf.id DESC
+        LIMIT 10
+    """)
+    
+    for row in cursor.fetchall():
+        print(f"\nID: {row[0]} | Product {row[1]}: {row[2]}")
+        print(f"  Date: {row[3]}")
+        print(f"  Qty: {row[4]:.1f} | Profit: ৳{row[5]:,.0f}")
+        print(f"  Advice: {row[6]}...")
+else:
+    print("\n[INFO] No forecasts found in database")
+    print("This means ai_advisor.py hasn't successfully saved any data yet")
+
 conn.close()
-PRODUCTS = products_df.to_dict(orient='records')
 
-# 60 realistic Bangladeshi customers (random with repeats)
-FIRST_NAMES = [
-    "Abdul", "Karim", "Rahim", "Jabbar", "Mannan", "Halim", "Fatema", "Rahima", "Amina",
-    "Ayesha", "Salma", "Nasrin", "Shamima", "Rashed", "Tamim", "Mushfiq", "Mahmud",
-    "Jamal", "Rafiq", "Farzana", "Rozina", "Sultana", "Jannat", "Asma", "Tasnia", "Nafisa",
-    "Sabbir", "Nipu", "Shakib", "Sumaiya", "Neela", "Rabeya"
-]
-LAST_NAMES = [
-    "Mia", "Khan", "Rahman", "Ahmed", "Hossain", "Begum", "Khatun", "Akter",
-    "Islam", "Ali", "Uddin", "Chowdhury", "Sarkar", "Das", "Roy", "Sheikh",
-    "Siddique", "Karim"
-]
-customers = []
-phones = set()
-while len(customers) < 60:
-    name = f"{random.choice(FIRST_NAMES)} {random.choice(LAST_NAMES)}"
-    phone = f"017{random.randint(10000000,99999999)}"
-    if phone not in phones:
-        customers.append((name, phone))
-        phones.add(phone)
-
-# Date range: 6 months plus last 8 days, ending Nov 8, 2025
-end_date = datetime(2025, 11, 8)
-start_date = end_date - timedelta(days=(6*30 + 8 - 1))
-date_range = [start_date + timedelta(days=d) for d in range((end_date - start_date).days + 1)]
-
-sales_rows = []
-for curr_date in date_range:
-    # 50–55 sales/day, but ±10% for randomness & effect
-    num_sales = random.randint(45, 60)
-    for _ in range(num_sales):
-        cust = random.choice(customers)
-        sale_date = curr_date.strftime('%Y-%m-%d')
-        # 1 to 3 items per sale
-        n_items = random.choices([1,2,3],[0.5,0.3,0.2])[0]
-        prods = random.sample(PRODUCTS, n_items)
-        discount = random.choice([0,0,0,0,5,10,20])
-        paid_ratio = random.choices([1,0.7,0.4],[0.7,0.2,0.1])[0]
-        cart_total = 0
-        for prod in prods:
-            price = float(prod['selling_price'])
-            qty = random.randint(1, 6)
-            subtotal = qty * price
-            paid = round((subtotal - discount) * paid_ratio, 2) if discount < subtotal else subtotal*paid_ratio
-            row = {
-                "customer_name": cust[0],
-                "customer_phone": cust[1],
-                "product_name": prod['name'],
-                "quantity": qty,
-                "unit_price": price,
-                "discount": round(discount / n_items, 2),
-                "paid_amount": paid,
-                "sale_date": sale_date
-            }
-            sales_rows.append(row)
-
-print(f"Total records: {len(sales_rows)}")
-df = pd.DataFrame(sales_rows)
-df.to_csv("realistic_sales_for_forecast.csv", index=False)
-print("CSV Saved: realistic_sales_for_forecast.csv")
-# Optionally: Show a quick breakdown for human preview
-print(df.sample(10))
+print("\n" + "=" * 70)
+print("DONE")
+print("=" * 70)
